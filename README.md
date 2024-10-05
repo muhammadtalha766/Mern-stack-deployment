@@ -1,7 +1,3 @@
-Here’s a formatted README file suited for GitHub, based on the deployment steps you used for your MERN stack website:
-
----
-
 # MERN Stack Application - Deployment Guide
 
 This repository contains a full-stack MERN (MongoDB, Express, React, Node.js) application. The following guide provides the steps necessary to clone, install dependencies, and deploy the application using PM2.
@@ -28,7 +24,9 @@ cd mern-tutorial/
 
 ### 2. Install Node.js via NVM
 
-You need Node.js version 20.x. Install it using NVM:
+You need Node.js version 20.x. Install it using NVM by following the instructions from the official Node.js site: [Node.js package manager installation guide](https://nodejs.org/en/download/package-manager).
+
+Alternatively, you can install Node.js with these commands:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
@@ -46,7 +44,9 @@ npm -v
 
 ### 3. Install MongoDB 8.0
 
-Set up MongoDB 8.0 by following these commands:
+Follow the official MongoDB installation guide for Ubuntu: [Install MongoDB on Ubuntu](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/).
+
+Alternatively, you can set up MongoDB with these commands:
 
 ```bash
 sudo apt-get install gnupg curl
@@ -78,6 +78,7 @@ Next, install the frontend dependencies:
 cd frontend/
 npm install
 ```
+By running npm install, you will get a node_modules folder
 
 ### 5. Build the Frontend
 
@@ -87,20 +88,15 @@ To build the React frontend for production:
 cd frontend/
 npm run build
 ```
+By running npm run build, you will get a build folder
 
-### 6. Run the Backend and Frontend with PM2
+### 6. Run the Server with PM2
 
 Start the backend using PM2:
 
 ```bash
-cd backend/
-pm2 start server.js --name "Goalserver-be"
-```
-
-Serve the frontend using PM2:
-
-```bash
-pm2 serve build/ 5001 --name "Goalfrontend-fe"
+cd mern-tutorial/ 
+pm2 start "npm start server" --name "Goal setter"
 ```
 
 ### 7. Manage Processes
@@ -128,7 +124,3 @@ pm2 delete 0 1
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Feel free to copy this `README.md` into your repository! Let me know if you'd like any additional details or changes.
