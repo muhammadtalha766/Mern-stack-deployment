@@ -95,7 +95,8 @@ By running npm run build, you will get a build folder
 Start the backend using PM2:
 
 ```bash
-cd mern-tutorial/ 
+cd mern-tutorial/
+npm install -g pm2
 pm2 start "npm start server" --name "Goal setter"
 ```
 
